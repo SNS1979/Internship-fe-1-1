@@ -1,0 +1,22 @@
+.block_details{
+    background-color: #839695;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+}
+
+.body_comment{
+    background-color: white;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.comment_title{
+    text-align: start;
+}
+
+.coment_body{
+    text-align: start;
+}

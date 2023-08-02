@@ -1,0 +1,12 @@
+.index {
+    padding-left: 3%;
+    padding-right: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: #839695;
+}
+
+a{
+    width: 28%;
+}
