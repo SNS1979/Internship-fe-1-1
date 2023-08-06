@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import './detail.css'
 import { useParams } from 'react-router-dom'
 import { listenerNewID } from '../../firebase/firebaseRDB';
+import { InputText } from '../../components/input/InputText.jsx';
+
 
 const Detail = () => {
     const {id} = useParams();
@@ -22,6 +24,7 @@ const Detail = () => {
             <div className='body_comment'>
                 <h3 className='comment_title'>Experts Comment</h3>
                 <p className='coment_body'>grherthrhrth sdvv efsv eew  tg t g r r rtg rtg rt r  s dfbvfdbdg trg twrvertrga</p>
+                <InputText namebutton= "Отправить"/>
             </div>
         </div>
     )

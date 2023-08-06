@@ -1,0 +1,8 @@
+.input_text{
+    display: flex;
+    flex-direction: column;
+}
+
+.input_text_body{
+    height: 80px;
+}
