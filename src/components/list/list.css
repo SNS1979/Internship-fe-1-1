@@ -1,0 +1,21 @@
+.list{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.list_name{
+    color: black;
+}
+
+.list_body{
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.list_item{
+    color: black;
+    text-align: start;
+    background: rgb(228, 226, 226);
+    padding: 3px;
+}

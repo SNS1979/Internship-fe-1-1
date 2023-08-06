@@ -1,4 +1,4 @@
-import { ref, onValue } from "firebase/database"
+import { ref, onValue, set } from "firebase/database"
 import { db } from "./initFirebase";
 
 //Слушатель для новостей
@@ -12,19 +12,17 @@ export const listenerNews = (func) => {
 
 //
 export const toMass = (object => {
+ 
   const data = [];
   for (const key in object) {
-    const financialNew = {
-      id: key,
-      title: object[key].title,
-      body: object[key].body,
-      urlImg: object[key].urlImg,
-      urlNew: object[key].urlNew,
-    }
+    const financialNew = {...object[key]};
+    financialNew.id = key;
     data.push(financialNew)
   }
   return data;
 })
+
+
 
 //слушатель новости по id
 export const listenerNewID = (idNew, func) => {
@@ -35,6 +33,12 @@ export const listenerNewID = (idNew, func) => {
     func(rez);
   }
   );
+}
+
+export const writeExpertComment = (idNew, idComment, comment) => {
+    set (ref (db , 'news/' + idNew + '/analysis/' + idComment), {
+      body:comment,
+    });
 }
 
 
