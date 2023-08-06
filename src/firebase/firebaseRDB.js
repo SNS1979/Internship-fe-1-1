@@ -1,6 +1,7 @@
 import { ref, onValue, set } from "firebase/database"
 import { db } from "./initFirebase";
 
+ 
 //Слушатель для новостей
 export const listenerNews = (func) => {
   const dbRef = ref(db, `news`);
@@ -26,13 +27,15 @@ export const toMass = (object => {
 
 //слушатель новости по id
 export const listenerNewID = (idNew, func) => {
-  const dbRef = ref(db, `news/${idNew}`);
-  onValue(dbRef, data => {
+  if (idNew) {
+    const dbRef = ref(db, `news/${idNew}`);
+    onValue(dbRef, data => {
     const rez = data.val();
     rez.id = idNew;
     func(rez);
   }
   );
+  }
 }
 
 export const writeExpertComment = (idNew, idComment, comment) => {
